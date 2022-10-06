@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Generate a QR code image to point to a website URL"
+    />
+    <meta
+      name="keywords"
+      content="qr code, qr codes, qrcodes, create qr code, qr code generator, create qrcodes, make a qr code, online qr code"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      id="js-theme-stylesheet"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css"
+    />
+    <link rel="stylesheet" href="styles/main.css?v=1.0.0">
+    <title>Q-Arrr Codes</title>
+  </head>
+  <body>
+    <form id="theme-form">
+      <label for="theme-dark">
+        🌙
+        <input type="radio" value="dark" name="theme" id="theme-dark" checked />
+      </label>
+
+      <label for="theme-light">
+        ☀
+        <input type="radio" value="light" name="theme" id="theme-light" />
+      </label>
+    </form>
+    <header class="site-header">
+      <h1>
+        Q-Arrr Codes
+        <img class="logo" src="/images/pirate-penguin.svg" alt="" />
+      </h1>
+    </header>
+    <hr />
+    <main>
+      <article class="columns">
+        <section class="column">
+          <form id="generate-form">
+            <p>
+              <label for="url"> Enter the value of your QR Code </label>
+              <input
+                id="url"
+                type="url"
+                placeholder="eg: https://example.com"
+              />
+            </p>
+            <p>
+              <label for="size">
+                Enter a size in pixels, or choose a preset from the list
+              </label>
+              <input
+                type="text"
+                name="size"
+                id="size"
+                list="sizes"
+                placeholder="eg: 300"
+                required
+              />
+              <datalist id="sizes">
+                <option value="100">100x100</option>
+                <option value="200">200x200</option>
+                <option value="300" selected>300x300</option>
+                <option value="400">400x400</option>
+                <option value="500">500x500</option>
+                <option value="600">600x600</option>
+                <option value="700">700x700</option>
+                <option value="800">800x800</option>
+              </datalist>
+            </p>
+            <button type="submit">Create</button>
+            <button type="reset">Reset</button>
+          </form>
+        </section>
+
+        <section id="generated" class="column">
+          <div id="qrcode"></div>
+        </section>
+      </article>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/main.js?v=1.0.0" defer></script>
+    <script src="js/theme.js?v=1.0.0" defer></script>
+  </body>
+</html>
